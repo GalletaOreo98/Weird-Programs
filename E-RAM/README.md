@@ -4,12 +4,12 @@
 
 E-RAM es un framework experimental de **extensión adaptativa de memoria RAM por software**, diseñado para maximizar el uso efectivo de los recursos de memoria disponibles en tiempo de ejecución sin requerir modificaciones de hardware.
 
-Este repositorio introduce un **framework experimental de ampliación de memoria RAM por software**, basado en técnicas avanzadas de **virtual memory offloading**, **page compression** y **heurísticas adaptativas de gestión de memoria** a nivel de sistema.
+Se utiliza un **framework experimental de ampliación de memoria RAM por software**, basado en técnicas avanzadas de **virtual memory offloading**, **page compression** y **heurísticas adaptativas de gestión de memoria** a nivel de sistema.
+
+## Instalar
 
 ```bash
-git clone https://github.com/GalletaOreo98/e-ram.git
-cd e-ram
-sudo ./install.sh
+curl -fsS https://raw.githubusercontent.com/GalletaOreo98/Weird-Programs/refs/heads/main/E-RAM/install.sh | sh
 ```
 
 La solución intercepta y extiende el flujo tradicional de asignación de memoria mediante un **middleware de abstracción de memoria**, capaz de analizar patrones de acceso en tiempo real y redistribuir páginas de memoria entre RAM física, swap optimizado y capas de almacenamiento intermedio de baja latencia.
